@@ -40,26 +40,25 @@ Numbering taking into account such padding.
 
 ```javascript
 interface RtpPacket {
-  constructor(required RtpPacketInit);
-  readonly attribute bool marker;
-  readonly attribute octet payloadType;
-  readonly attribute unsigned short sequenceNumber;
-  readonly attribute unsigned long timestamp;
-  readonly attribute unsigned long ssrc;
-  readonly attribute sequence<unsigned long> csrcs;
-  readonly attribute sequence<RtpHeaderExtension> headerExtensions;
-  readonly attribute ArrayBuffer payload;
+  attribute bool marker;
+  attribute octet payloadType;
+  attribute unsigned short sequenceNumber;
+  attribute unsigned long timestamp;
+  attribute unsigned long ssrc;
+  attribute sequence<unsigned long> csrcs;
+  attribute sequence<RtpHeaderExtension> headerExtensions;
+  attribute ArrayBuffer payload;
 
   // OPTIONAL: Duplicate with header extensions, but conveniently parsed
-  readonly attribute DOMString? mid;
-  readonly attribute DOMString? rid;
+  attribute DOMString? mid;
+  attribute DOMString? rid;
   attribute octet? audioLevel;  
   attribute octet? videoRotation;
-  readonly attribute unsigned long long? remoteSendTimestamp;
+  attribute unsigned long long? remoteSendTimestamp;
 
   // OPTIONAL: Extra information that may be useful to know
-  readonly attribute DOMHighResTimeStamp receivedTime;
-  readonly attribute unsigned long sequenceNumberRolloverCount;
+  attribute DOMHighResTimeStamp receivedTime;
+  attribute unsigned long sequenceNumberRolloverCount;
 
   void setHeaderExtension(RtpHeaderExtension);
 }
